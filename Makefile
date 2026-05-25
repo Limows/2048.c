@@ -1,6 +1,10 @@
 CFLAGS += -std=c99 -Wextra
 PREFIX ?= /usr
 
+ifeq ($(UNAME),Haiku)
+        CC = gcc-x86
+endif
+
 .PHONY: all clean test
 
 all: 2048
